@@ -12,6 +12,6 @@ BOT_TOKEN = getenv("BOT_TOKEN", None)
 MONGO_URL = getenv("MONGO_URL", None)
 OWNER_ID = "2096463013"
 SUPPORT_GRP = "official_radhe_krishna_1"
-UPDATE_CHNL = "ALLTYPECC"
+UPDATE_CHNL = "shukunkepal"
 OWNER_USERNAME = "Majha_Radhe"
 
