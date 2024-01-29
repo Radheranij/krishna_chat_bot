@@ -41,10 +41,10 @@ async def chatbot_text(client: Client, message: Message):
     chatai = chatdb["Word"]["WordDb"]
 
     if not message.reply_to_message:
-        DAXXdb = MongoClient(MONGO_URL)
-        DAXX = DAXXdb["DAXXDb"]["DAXX"]
-        is_DAXX = DAXX.find_one({"chat_id": message.chat.id})
-        if not is_DAXX:
+        Krishnadb = MongoClient(MONGO_URL)
+        Krishna = Krishnadb["KrishnaDb"]["Krishna"]
+        is_Krishna = Krishna.find_one({"chat_id": message.chat.id})
+        if not is_Krishna:
             await client.send_chat_action(message.chat.id, ChatAction.TYPING)
             K = []
             is_chat = chatai.find({"word": message.text})
@@ -61,11 +61,11 @@ async def chatbot_text(client: Client, message: Message):
                     await message.reply_text(f"{hey}")
 
     if message.reply_to_message:
-        DAXXdb = MongoClient(MONGO_URL)
-        DAXX = DAXXdb["DAXXDb"]["DAXX"]
-        is_DAXX = DAXX.find_one({"chat_id": message.chat.id})
+        Krishnadb = MongoClient(MONGO_URL)
+        Krishna = Krishnadb["KrishnaDb"]["Krishna"]
+        is_Krishna = Krishna.find_one({"chat_id": message.chat.id})
         if message.reply_to_message.from_user.id == client.id:
-            if not is_DAXX:
+            if not is_Krishna:
                 await client.send_chat_action(message.chat.id, ChatAction.TYPING)
                 K = []
                 is_chat = chatai.find({"word": message.text})
@@ -130,10 +130,10 @@ async def chatbot_sticker(client: Client, message: Message):
     chatai = chatdb["Word"]["WordDb"]
 
     if not message.reply_to_message:
-        DAXXdb = MongoClient(MONGO_URL)
-        DAXX = DAXXdb["DAXXDb"]["DAXX"]
-        is_DAXX = DAXX.find_one({"chat_id": message.chat.id})
-        if not is_DAXX:
+     Krishnadb = MongoClient(MONGO_URL)
+        Krishna = Krishnadb["KrishnaDb"]["Krishna"]
+        is_Krishna = Krishna.find_one({"chat_id": message.chat.id})
+        if not is_Krishna:
             await client.send_chat_action(message.chat.id, ChatAction.TYPING)
             K = []
             is_chat = chatai.find({"word": message.sticker.file_unique_id})
@@ -150,11 +150,11 @@ async def chatbot_sticker(client: Client, message: Message):
                     await message.reply_sticker(f"{hey}")
 
     if message.reply_to_message:
-        DAXXdb = MongoClient(MONGO_URL)
-        DAXX = DAXXdb["DAXXDb"]["DAXX"]
-        is_DAXX = DAXX.find_one({"chat_id": message.chat.id})
+        Krishnadb = MongoClient(MONGO_URL)
+        Krishna = Krishnadb["KrishnaDb"]["Krishna"]
+        is_Krishna = Krishna.find_one({"chat_id": message.chat.id})
         if message.reply_to_message.from_user.id == Client.id:
-            if not is_DAXX:
+            if not is_Krishna:
                 await client.send_chat_action(message.chat.id, ChatAction.TYPING)
                 K = []
                 is_chat = chatai.find({"word": message.text})
